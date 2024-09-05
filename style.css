@@ -1,0 +1,144 @@
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template:
+        "aside header nav" 100px
+        "aside main nav" 500px
+        "footer footer footer" 200px /
+        260px auto 260px
+    ;
+}
+
+header {
+    margin: 10px;
+    grid-area: header;
+    border: 5px solid black;
+    background: linear-gradient(to right, rgb(177, 7, 7), rgb(215, 141, 13));
+    color: rgb(56, 33, 9);
+    overflow: hidden;
+}
+
+header h2 {
+    animation: moverh2 9s linear infinite;
+}
+
+
+aside,
+nav {
+    margin: 10px;
+    border-radius: 20px;
+    border: 5px solid black;
+    padding: 20px 0;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+aside {
+    grid-area: aside;
+    background-color: azure;
+}
+
+nav {
+    grid-area: nav;
+    background-color: azure;
+}
+
+aside img,
+nav img {
+    width: 80px;
+    height: 80px;
+}
+
+main {
+    margin: 10px;
+    grid-area: main;
+    animation: banner 10s linear infinite;
+    background-size: cover;
+    border: 5px solid black;
+    border-radius: 20px;
+    text-align: center;
+
+
+}
+
+footer {
+    border-radius: 10px;
+    border: 5px solid black;
+    margin: 10px;
+    grid-area: footer;
+    padding: 40px 200px;
+    display: flex;
+    justify-content: space-around;
+    background-color: azure;
+}
+
+footer img {
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    animation: girar 10s linear infinite;
+}
+
+@keyframes moverh2 {
+    0% {
+        transform: translateX(-200px);
+    }
+
+    100% {
+        transform: translateX(1000px);
+    }
+}
+
+@keyframes girar {
+    0% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: translateX(0deg);
+    }
+}
+
+@keyframes banner {
+    0% {
+        background-image: url('./img/menu1.jpeg');
+        opacity: 1;
+    }
+    12.5%{
+        background-image: url('./img/menu1.jpeg');
+        opacity: 0.5;
+    }
+    25%{
+        background-image: url('./img/menu2.jpg');
+        opacity: 1;
+    }
+    37.5%{
+        background-image: url('./img/menu2.jpg');
+        opacity: 0.5;
+    }
+    50%{
+        background-image: url('./img/menu3.jpeg');
+        opacity: 1;
+    }
+    62.5%{
+        background-image: url('./img/menu3.jpeg');
+        opacity: 0.5;
+    }
+    75%{
+        background-image: url('./img/menu4.jpg');
+        opacity: 1;
+    }
+    87.5%{
+        background-image: url('./img/menu4.jpg');
+        opacity: 0.5;
+    }
+    100% {
+        background-image: url('./img/menu5.jpeg');
+        opacity: 1;
+    }
+}
